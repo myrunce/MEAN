@@ -1,0 +1,46 @@
+class Ninja {
+  constructor(name){
+    this.name = name
+    this.health = 100;
+    this.strength = 3;
+    this.speed = 3;
+  }
+  sayName(){
+    console.log('my ninja name is ' + this.name);
+  }
+  
+  showStats(){
+    console.log("health: " + this.health + " strength: " +this.strength + " speed: " + this.speed);
+  }
+  
+  drinkSake(){
+    this.health += 10;
+  }
+  
+}
+
+class Sensei extends Ninja{
+  constructor(name){
+    super(name);
+    this.name = name;
+    this.health = 200;
+    this.strength = 10;
+    this.speed = 10;
+    this.wisdom = 10;
+  }
+  
+  speakWisdom(){
+    super.drinkSake();
+    console.log("Only when you understand you know nothing is when you can learn something");
+  }
+}
+
+let christina = new Ninja("christina");
+christina.sayName();
+christina.showStats();
+christina.drinkSake();
+christina.showStats();
+let myron = new Sensei("myron");
+myron.showStats();
+myron.speakWisdom();
+ 

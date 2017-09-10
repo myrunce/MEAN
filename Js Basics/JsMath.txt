@@ -1,0 +1,93 @@
+// MATH 1
+function zero_negativity(arr){
+  if (arr.constructor !== Array){
+    return "parameter must be an array";
+  }
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] < 0){
+      return false;
+    }
+  }
+  return true;
+}
+
+let test1 = zero_negativity("hello");
+let test2 = zero_negativity([-1,2]);
+let test3 = zero_negativity([1,3]);
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
+
+// MATH 2
+function is_even(num){
+   if (typeof num !== 'number'){
+     return "parameter must be a number"
+   }
+    if (num % 2 == 0){
+      return true;
+    }
+  return false;
+}
+
+let test4 = is_even("hello");
+let test5 = is_even(1);
+let test6 = is_even(2);
+
+console.log(test4);
+console.log(test5);
+console.log(test6);
+
+// MATH 3
+function how_many_even(arr){
+  if (arr.constructor !== Array){
+    return "parameter must be an array";
+  }
+  count = 0
+  for (let i = 0; i < arr.length; i++){
+    if (is_even(arr[i]) == true){
+      count++;
+    }
+  }
+  return "you have " + count + " even numbers in your array."
+}
+
+let test7 = how_many_even("hello");
+let test8 = how_many_even([2,4,6]);
+let test9 = how_many_even([1,2,3,4,5,6,7]);
+
+console.log(test7);
+console.log(test8);
+console.log(test9);
+
+// MATH 4
+function create_dummy_array(n){
+  if (typeof n !== 'number'){
+     return "parameter must be a number"
+   }
+  let arr = [];
+  for (let i = 0; i < n; i++){
+    arr.push(Math.floor(Math.random() * 10))
+  }
+ return arr;
+}
+
+let test10 = create_dummy_array("hello");
+let test11 = create_dummy_array(11);
+
+console.log(test10);
+console.log(test11);
+
+// MATH 5
+function random_choice(arr){
+  if (arr.constructor !== Array){
+    return "parameter must be an array";
+  }
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+let test12 = random_choice("hello");
+let test13 = random_choice([1,"hello", true, [1, 2, 4]]);
+
+console.log(test12);
+console.log(test13);

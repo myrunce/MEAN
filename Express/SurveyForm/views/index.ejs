@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <fieldset>
+            <form action="/process" method="POST">
+                Your Name: <input type="text" name="name"><br><br>
+                Dojo Location: <select name="dojoLocation">
+                    <option value="San Jose">San Jose</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Washington DC">Washington Dc</option>
+                </select><br><br>
+                Favorite Language: <select name="favLanguage">
+                    <option value="Python">Python</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="C++">C++</option>
+                </select><br><br>
+                Comment (optional):<br><br>
+                <textarea name="comment"></textarea><br>
+                <input type="submit" value="submit"> 
+            </form>
+        </fieldset>
+    </body>
+</html>

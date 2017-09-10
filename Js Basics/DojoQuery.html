@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <button id="somebutton">  BUTTON   </button>
+    </body>
+    <script>
+        function $Dojo(someId){
+            var x = document.getElementById(someId);
+            x.click(callback) = (function (){ x.addEventListener("click", function(){ console.log("hello")})} ());
+            // x.click = (function (){ x.addEventListener("click", function(){ console.log("hello") })}());
+            // this.click = function (){ this.addEventListener("click", function(){ console.log("hello") })};
+            // return document.getElementById(someId);
+            return x;
+    
+        }
+        // function $Dojo(someid){
+
+        // }
+
+        // needs to be $Dojo(someELE).click(some function)
+        $Dojo("somebutton").click(3);
+        // console.log(document.getElementById("somebutton"));
+        // document.getElementById("somebutton").addEventListener("click", function(){ console.log("hello") });
+
+        // var $Dojo = document.getElementById("somebutton");
+        // $Dojo.click = $Dojo.addEventListener("click", function(){ console.log("hello") });
+        // console.log($Dojo.click);
+        // $Dojo.click()
+        
+    </script>
+</html>

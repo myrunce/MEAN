@@ -1,0 +1,45 @@
+var _ = {
+   map: function(array, callback) {
+     let arr = [];
+     let x = callback;
+     for (let i = 0; i < array.length; i++){
+       arr.push(array[i] * x)
+     }
+     return arr;
+   },
+   reduce: function(arr) { 
+     let x = 0;
+     for (let i = 0; i < arr.length; i++){
+        x += arr[i];
+     }
+     return x;
+   },
+   find: function(arr, callback) {
+     let x = callback;
+     for (let i = 0; i < arr.length; i++){
+       if (arr[i] == x){
+         return arr[i];
+       }
+     }
+     return false;
+   },
+   filter: function(arr, callback) { 
+     let array = [];
+     for (let i =0; i < arr.length; i++){
+       if (callback(arr[i]) == true){
+         array.push(arr[i]);
+       }
+     }
+     return array;
+   },
+   reject: function(arr, callback) { 
+     let array = [];
+     for (let i =0; i < arr.length; i++){
+       if (callback(arr[i]) == false){
+         array.push(arr[i]);
+       }
+     }
+     return array; 
+   }
+ }
+// you just created a library with 5 methods!

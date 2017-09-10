@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quoting Dojo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Welcome To QuotingDojo</h1>
+        <% if(typeof(errors) != 'undefined' ) { %>
+            <% for (var x in errors) { %>
+                <h3><%= errors[x].title %></h3>
+            <% } %>
+        <% } %>
+        <form action="/quotes" method="POST">
+            Your name: <input type="text" name="name"><br><br>
+            Your Quote: <input type="textarea" name="quote"><br>
+            <input type="submit" value="Add my quote!"><br><br>
+        </form>
+        <form action="/quotes" method="GET">
+            <input type="submit" value="Skip to quotes!"><br><br>
+        </form>
+        <a href="/quotes">quotes</a>
+    </body>
+</html>

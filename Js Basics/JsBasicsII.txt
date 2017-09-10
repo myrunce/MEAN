@@ -1,0 +1,51 @@
+function magic_multiply(x , y){
+  if (x.constructor === Array){
+    if(typeof y === 'string'){
+      return "error cannot multiply string";
+    }
+    for (let i = 0; i < x.length; i++){
+      if (typeof x[i] === 'string'){
+        return "error cannot multiply string";
+      }
+      else{
+        x[i] *= y;
+      }
+    }
+    return x;
+  }
+  else if (y.constructor === Array){
+    if(typeof y === 'string'){
+      return "error cannot multiply string";
+    }
+    for (let i = 0; i < y.length; i++){
+      if (typeof y[i] === 'string'){
+        return "error cannot multiply string";
+      }
+      else{
+        y[i] *= x;
+      }
+    }
+    return y;
+  }
+  else{
+    if (typeof x === "string" || typeof y === "string"){
+      return "error cannot multiply string";
+    }
+    else{
+      x *= y;
+    }
+    return x;
+  }
+}
+
+let test1 = magic_multiply(5, 2);
+let test2 = magic_multiply(0, 0);
+let test3 = magic_multiply([1, 2, 3], 2);
+let test4 = magic_multiply(7, "three");
+let test5 = magic_multiply("Brendo", 4);
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
+console.log(test4);
+console.log(test5);

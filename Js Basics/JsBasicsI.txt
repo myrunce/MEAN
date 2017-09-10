@@ -1,0 +1,33 @@
+// BASIC 1
+var x = [];
+console.log(x);
+x.push("coding", "dojo", "rocks");
+console.log(x);
+x.pop()
+console.log(x);
+
+// BASIC 2
+const y = [];
+console.log(y);
+y.push(88);
+console.log(y); //number was added to arr
+
+//BASIC 3
+var z = [9, 10, 6, 5, -1, 20, 13, 2];
+for (let i = 0; i < z.length; i++){
+  console.log(z[i] + " first arr");
+}
+for(let j = 0; j < z.length - 1; j++){
+  console.log(z[j] + " second arr");
+}
+
+//BASIC 4
+var names = ['Kadie', 'Joe', 'Fritz', 'Pierre', 'Alphonso'];
+for (let a = 0; a < names.length; a++){
+  console.log(names[a].length);
+}
+
+function yell(string){
+  return string.toUpperCase();
+}
+console.log(yell("yell"));

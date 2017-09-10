@@ -1,0 +1,1 @@
+An assignment that tests our ability with mongoose. The goal is to render a form on "/", post on "/quotes" to save quote to database, and get on "/quotes" to view all quotes

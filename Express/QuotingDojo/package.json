@@ -1,0 +1,18 @@
+{
+  "name": "quotingdojo",
+  "version": "1.0.0",
+  "description": "An assignment that tests our ability with mongoose. The goal is to render a form on \"/\", post on \"/quotes\" to save quote to database, and get on \"/quotes\" to view all quotes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.10"
+  }
+}

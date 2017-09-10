@@ -1,0 +1,355 @@
+Microsoft Windows [Version 10.0.15063]
+(c) 2017 Microsoft Corporation. All rights reserved.
+
+C:\Users\myron>cd c/
+The system cannot find the path specified.
+
+C:\Users\myron>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\myron>cd ..
+
+C:\Users>cd ..
+
+C:\>cd "program files"
+
+C:\Program Files>cd mongodb
+
+C:\Program Files\MongoDB>mongo.exe
+'mongo.exe' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Program Files\MongoDB>./mongo
+'.' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Program Files\MongoDB>cd server
+
+C:\Program Files\MongoDB\Server>cd 3.4
+
+C:\Program Files\MongoDB\Server\3.4>cd bin
+
+C:\Program Files\MongoDB\Server\3.4\bin>monogo.exe
+'monogo.exe' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Program Files\MongoDB\Server\3.4\bin>mongo.exe
+MongoDB shell version v3.4.7
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.7
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+Server has startup warnings:
+2017-09-08T14:18:56.693-0700 I CONTROL  [initandlisten]
+2017-09-08T14:18:56.693-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-09-08T14:18:56.693-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-09-08T14:18:56.693-0700 I CONTROL  [initandlisten]
+> use my_first_db
+switched to db my_first_db
+> db.find()
+2017-09-08T15:22:39.071-0700 E QUERY    [thread1] TypeError: db.find is not a function :
+@(shell):1:1
+> db.students.find()
+{ "_id" : ObjectId("59b3176e406dba2c1bba0fc3"), "name" : "Myron", "home_state" : "Ca", "lucky_number" : 3, "birthday" : { "month" : 1, "day" : 31, "year" : 1992 } }
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("59b3176e406dba2c1bba0fc3"),
+        "name" : "Myron",
+        "home_state" : "Ca",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 1,
+                "day" : 31,
+                "year" : 1992
+        }
+}
+> db.students.insert({name: "kris", home_state: "Ca", lucky_number: 9, birthday: {month: 12, day: 9, year: 1987}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name: "Christina", home_state: "Ca", lucky_number: 4, birthday: {month: 3, day: 8, year: 1994}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name: "Bob", home_state: "Az", lucky_number: 51, birthday: {month: 9, day: 3, year: 1997}})
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({name: "Al", home_state: "Co", lucky_number: 78, birthday: {month: 5, day: 18, year: 1978}})
+WriteResult({ "nInserted" : 1 })
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("59b3176e406dba2c1bba0fc3"),
+        "name" : "Myron",
+        "home_state" : "Ca",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 1,
+                "day" : 31,
+                "year" : 1992
+        }
+}
+{
+        "_id" : ObjectId("59b3189e8ace7b681352a267"),
+        "name" : "kris",
+        "home_state" : "Ca",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : 12,
+                "day" : 9,
+                "year" : 1987
+        }
+}
+{
+        "_id" : ObjectId("59b318c28ace7b681352a268"),
+        "name" : "Christina",
+        "home_state" : "Ca",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 3,
+                "day" : 8,
+                "year" : 1994
+        }
+}
+{
+        "_id" : ObjectId("59b318f68ace7b681352a269"),
+        "name" : "Bob",
+        "home_state" : "Az",
+        "lucky_number" : 51,
+        "birthday" : {
+                "month" : 9,
+                "day" : 3,
+                "year" : 1997
+        }
+}
+{
+        "_id" : ObjectId("59b3191b8ace7b681352a26a"),
+        "name" : "Al",
+        "home_state" : "Co",
+        "lucky_number" : 78,
+        "birthday" : {
+                "month" : 5,
+                "day" : 18,
+                "year" : 1978
+        }
+}
+> db.students.find({lucky_number: {$gt: 3}}).pretty()
+{
+        "_id" : ObjectId("59b3189e8ace7b681352a267"),
+        "name" : "kris",
+        "home_state" : "Ca",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : 12,
+                "day" : 9,
+                "year" : 1987
+        }
+}
+{
+        "_id" : ObjectId("59b318c28ace7b681352a268"),
+        "name" : "Christina",
+        "home_state" : "Ca",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 3,
+                "day" : 8,
+                "year" : 1994
+        }
+}
+{
+        "_id" : ObjectId("59b318f68ace7b681352a269"),
+        "name" : "Bob",
+        "home_state" : "Az",
+        "lucky_number" : 51,
+        "birthday" : {
+                "month" : 9,
+                "day" : 3,
+                "year" : 1997
+        }
+}
+{
+        "_id" : ObjectId("59b3191b8ace7b681352a26a"),
+        "name" : "Al",
+        "home_state" : "Co",
+        "lucky_number" : 78,
+        "birthday" : {
+                "month" : 5,
+                "day" : 18,
+                "year" : 1978
+        }
+}
+> db.students.find({lucky_number: {$lte: 10}}).pretty()
+{
+        "_id" : ObjectId("59b3176e406dba2c1bba0fc3"),
+        "name" : "Myron",
+        "home_state" : "Ca",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 1,
+                "day" : 31,
+                "year" : 1992
+        }
+}
+{
+        "_id" : ObjectId("59b3189e8ace7b681352a267"),
+        "name" : "kris",
+        "home_state" : "Ca",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : 12,
+                "day" : 9,
+                "year" : 1987
+        }
+}
+{
+        "_id" : ObjectId("59b318c28ace7b681352a268"),
+        "name" : "Christina",
+        "home_state" : "Ca",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 3,
+                "day" : 8,
+                "year" : 1994
+        }
+}
+> db.students.find({lucky_number: {$gte: 1}, {$lte:10}}).pretty()
+2017-09-08T15:30:08.882-0700 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:43
+> db.students.find({lucky_number: {$lte: 10 $and $gte:1}}).pretty()
+2017-09-08T15:31:20.142-0700 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:42
+> db.students.find({lucky_number: {$gte: 1} $and  {$lte:10}}).pretty()
+2017-09-08T15:31:55.938-0700 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:42
+> db.students.find({lucky_number: {$lte: 10} $and {gte:1}}).pretty()
+2017-09-08T15:32:44.318-0700 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:43
+> db.students.find({ $and: {lucky_number: { $gte:1 }}, {lucky_number: { $lte:10 }} }.pretty()
+...
+... ^C
+
+> db.students.find({lucky_number: {$lte: 10, $gte:1}}).pretty()
+{
+        "_id" : ObjectId("59b3176e406dba2c1bba0fc3"),
+        "name" : "Myron",
+        "home_state" : "Ca",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 1,
+                "day" : 31,
+                "year" : 1992
+        }
+}
+{
+        "_id" : ObjectId("59b3189e8ace7b681352a267"),
+        "name" : "kris",
+        "home_state" : "Ca",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : 12,
+                "day" : 9,
+                "year" : 1987
+        }
+}
+{
+        "_id" : ObjectId("59b318c28ace7b681352a268"),
+        "name" : "Christina",
+        "home_state" : "Ca",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 3,
+                "day" : 8,
+                "year" : 1994
+        }
+}
+> db.students.update({name: {$exists: true}}, {$set {interests: ["coding", "brunch", "MongoDB"]}} )
+2017-09-08T15:50:21.549-0700 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:50
+> db.students.update({name: {$exists: true}}, {$set {interests: "coding", "brunch", "MongoDB"}} )
+2017-09-08T15:52:38.545-0700 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:50
+> db.students.update({name: {$exists: true}}, {$set {interests: ["coding", "brunch", "MongoDB"]}} )
+2017-09-08T15:59:43.596-0700 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:50
+> db.students.update({name: {$exists: true}}, {$set {interests: ["coding", "brunch", "MongoDB"]}} )
+2017-09-08T16:00:26.846-0700 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:50
+> db.students.update({name: {$exists: true}}, {$set: {interests: ["coding", "brunch", "MongoDB"]}} )
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.students.update({name: "all"}, {$set: {interests: ["coding", "brunch", "MongoDB"]}} )
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.students.updateMany({name: {$exists: true}}, {$set: {interests: ["coding", "brunch", "MongoDB"]}} )
+{ "acknowledged" : true, "matchedCount" : 5, "modifiedCount" : 4 }
+> db.students.find().pretty()
+{
+        "_id" : ObjectId("59b3176e406dba2c1bba0fc3"),
+        "name" : "Myron",
+        "home_state" : "Ca",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 1,
+                "day" : 31,
+                "year" : 1992
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("59b3189e8ace7b681352a267"),
+        "name" : "kris",
+        "home_state" : "Ca",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : 12,
+                "day" : 9,
+                "year" : 1987
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("59b318c28ace7b681352a268"),
+        "name" : "Christina",
+        "home_state" : "Ca",
+        "lucky_number" : 4,
+        "birthday" : {
+                "month" : 3,
+                "day" : 8,
+                "year" : 1994
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("59b318f68ace7b681352a269"),
+        "name" : "Bob",
+        "home_state" : "Az",
+        "lucky_number" : 51,
+        "birthday" : {
+                "month" : 9,
+                "day" : 3,
+                "year" : 1997
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("59b3191b8ace7b681352a26a"),
+        "name" : "Al",
+        "home_state" : "Co",
+        "lucky_number" : 78,
+        "birthday" : {
+                "month" : 5,
+                "day" : 18,
+                "year" : 1978
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+>
