@@ -1,0 +1,21 @@
+{
+  "name": "dogdashboard",
+  "version": "1.0.0",
+  "description": "Another assignment that tests our ability with mongoose. The requirements are posting, editing, and getting info from the database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.10",
+    "mongoose-auto-increment": "^5.0.1"
+  },
+  "devDependencies": {}
+}

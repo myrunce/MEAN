@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dog Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Welcome to the Puppy Dashboard!</h1>
+        <a href="/dogs/new">Make a new puppy!</a>
+        <br>
+        <h4>Here's all the pups you created!</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Owner</th>
+                    <th>Breed</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (var x in dogs) { %>
+                    <tr>
+                        <td><a href="dogs/<%= dogs[x]._id %>"><%= dogs[x].name %></a></td>
+                        <td><%= dogs[x].owner %></td>
+                        <td><%= dogs[x].breed %></td>
+                        <td><%= dogs[x].age %></td>
+                        <td><a href="dogs/edit/<%= dogs[x]._id %>">Edit</a> | <a href="dogs/destroy/<%= dogs[x]._id %>">Delete</a></td>
+                    </tr>
+                <% } %>
+            </tbody>
+    </body>
+</html>
